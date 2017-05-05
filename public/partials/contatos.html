@@ -24,7 +24,7 @@
       <tr>
          <th>NOME</th>
          <th>E-MAIL</th>
-         <th>TELEFONE</th>
+         <th>EMERGÊNCIA</th>
          <th class="text-center">Ação</th>
       </tr>
       <tr ng-repeat="c in contatos | filter: filtro">
@@ -34,7 +34,7 @@
             </a>
          </td>
          <td>{{c.email}}</td>
-         <td>{{c.telefone}}</td>
+         <td>{{c.emergencia.nome}}</td>
          <td class="text-center">
             <button class="btn btn-warning" ng-click="remove(c)">
                Remover

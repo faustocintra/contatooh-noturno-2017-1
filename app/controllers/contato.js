@@ -6,7 +6,7 @@ module.exports = function(app) {
    
    controller.listaContatos = function(req, res) {
    
-      Contato.find().exec().then(
+      Contato.find().populate('emergencia').exec().then(
          function(contatos) {
             res.json(contatos);
          },
@@ -36,7 +36,7 @@ module.exports = function(app) {
    
    controller.removeContato = function(req, res) {
       
-      Contato.remove(req.params.id).exec().then(
+      Contato.remove({_id: req.params.id}).exec().then(
          function() {
             // 204: OK, sem conteúdo em seguida
             res.status(204).end();

@@ -15,6 +15,12 @@ module.exports = function() {
          index: {
             unique: true
          }
+      },
+      // emergencia é um atributo que faz referência a um outro objeto
+      // deste mesmo esquema (Contato)
+      emergencia: {
+         type: mongoose.Schema.ObjectId,
+         ref: 'Contato'
       }
    });
 
