@@ -2,9 +2,11 @@ var http = require('http');
 var app = require('./config/express')(); // Cuidado: tem dois 
                                          // parênteses vazios aqui
 
+require('./config/passport')(); // Dois parênteses vazios aqui tb                                         
+
 // Conectando ao MongoDb via Mongoose
 var conn = require('./config/database.js');
-conn('mongodb://localhost/contatooh');                                         
+//conn('mongodb://localhost/contatooh');                                         
 
 http
     .createServer(app)

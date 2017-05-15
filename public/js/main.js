@@ -21,6 +21,10 @@ angular.module('contatooh', ['ngRoute', 'ngResource'])
          controller: 'ContatoController'
       });
 
+      $routeProvider.when('/auth', {
+         templateUrl: 'partials/auth.html'
+      });
+
       $routeProvider.otherwise({redirectTo: '/contatos'});
 
    });

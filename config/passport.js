@@ -4,9 +4,9 @@ var GitHubStrategy = require('passport-github').Strategy;
 module.exports = function() {
    
    passport.use(new GitHubStrategy({
-      clientID: '',
-      clientSecret: '',
-      callbackURL: 'http://localhost:3000/auth/github'
+      clientID: '6ab60903e84ea3a841f3',
+      clientSecret: '6b895e5b5a75a938a121b49df66c031f3875ef63',
+      callbackURL: 'http://localhost:3000/auth/github/callback'
    }, function (accessToken, refreshToken, profile, done){
 
       Usuario.findOrCreate(
