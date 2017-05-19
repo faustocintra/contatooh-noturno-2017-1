@@ -1,7 +1,11 @@
 var passport = require('passport');
 var GitHubStrategy = require('passport-github').Strategy;
 
+var mongoose = require('mongoose');
+
 module.exports = function() {
+
+   var Usuario = mongoose.model('Usuario');
    
    passport.use(new GitHubStrategy({
       clientID: '6ab60903e84ea3a841f3',
