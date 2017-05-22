@@ -13,6 +13,19 @@
       <title>Bem-vindo!</title>
    </head>
    <body>
+
+      <% /* Este bloco só vai aparecer quando houver
+         usuário logado */ %>
+      <% if (usuarioLogado.length > 0) { %>
+         <div class="text-right">
+            <p>
+               Logado como: <span id="usuario-logado">
+                  <%= usuarioLogado %>
+               </span>
+               <a href="/logout">Logout</a>
+            </p>
+         </div>
+      <% } %>
       
       <div ng-view></div>
 

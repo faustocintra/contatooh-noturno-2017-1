@@ -1,15 +1,3 @@
-function verificaAutenticacao(req, res, next) {
-   
-	if(req.isAuthenticated()) {
-		return next();
-	}
-	else {
-		res.status('401').json('Não autorizado');
-	}
-
-}
-
-
 module.exports = function(app) {
    var controller = app.controllers.contato;
    
@@ -20,11 +8,11 @@ module.exports = function(app) {
    */
 
    app.route('/contatos')
-      .get(verificaAutenticacao, controller.listaContatos)
-      .post(verificaAutenticacao,controller.salvaContato);
+      .get(controller.listaContatos)
+      .post(controller.salvaContato);
 
    app.route('/contatos/:id')
-      .get(verificaAutenticacao,controller.obtemContato)
-      .delete(verificaAutenticacao,controller.removeContato);
+      .get(controller.obtemContato)
+      .delete(controller.removeContato);
 
-}
+};
