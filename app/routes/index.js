@@ -1,7 +1,7 @@
 module.exports = function(app) {
 
    app.get('/', function(req, res) {
-      console.log(res);
+      //console.log(res);
       var login = '';
       if(req.user) {
          login = req.user.login;

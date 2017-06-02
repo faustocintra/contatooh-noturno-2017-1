@@ -37,6 +37,18 @@ module.exports = function() {
     //app.disable('x-powered-by');
     app.use(helmet.hidePoweredBy({setTo: 'PHP 5.5.14'}));
 
+    // Evita que o site seja carregado dentro de um iframe
+    //helmet.xframe(); // Está assim no livro, não funciona
+    helmet.frameguard();
+
+    // Impede a injeção de scripts de terceiros (cross-scripting)
+    // na response
+    helmet.xssFilter();
+
+    // Impede que os navegadores tentem adivinhar e executar o
+    // conteúdo de determinados arquivos
+    helmet.noSniff();
+
     load('models', {cwd: 'app'})
         .then('controllers')
         .then('routes')
