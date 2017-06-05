@@ -23,5 +23,10 @@
     "mongoose-findorcreate": "^1.0.1",
     "passport": "^0.3.2",
     "passport-github": "^1.1.0"
+  },
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-contrib-clean": "^1.1.0",
+    "grunt-contrib-copy": "^1.0.0"
   }
 }
