@@ -18,6 +18,10 @@ module.exports = function() {
       inclusao: {
          type: Date,
          default: Date.now
+      },
+      ultimoLogin: {
+         type: Date,
+         default: Date.now
       }
    });
 
